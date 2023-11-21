@@ -1,0 +1,16 @@
+- React Joyride
+	- It is a feature rich library for creating interactive and customisable guided tours within your react applications. It allows you to easily highlight important elements, walk users through key features, and improve onboarding experiences.
+- React PDF Renderer
+	- It is a library that enables you to render and display PDF documents directly within react apps. It provides a straightforward way to integrate PDF viewing capabilities, allowing users to interact with and navigate through PDF content seamlessly.
+- React-Confetti
+	- It is a delightful and lightweight library that adds a burst of confetti to your react components. It is perfect for celebrating special events or achieving a sense of accomplishment in your web applications.
+- React Big Calendar
+	- It is a powerful and flexible event calendar library for react apps. It provides an intuitive and customisable interface to display events, schedule appointments, and manage time slots, making it ideal for building robust scheduling and calendar applications.
+- React Hook Form
+	- It is a performant and uncontrolled form validation library that leverages React's hooks API. It simplifies the process of managing form state, validation, and submission, offering a lightweight and efficient solution for building forms in React applications.
+- Recharts
+	- A charting library that simplifies the process of creating stunning data visualisations in React. With an extensive set of pre-built chart components & a straightforward API, Recharts enables devs to craft beautiful and responsive charts with minimal effort.
+- React Webcam
+	- It is a library that enables you to integrate webcam functionality into your React Apps. It provides a simple API for accessing and capturing webcam video and images, making it useful for apps involving video streaming, video conferencing, or image capture.
+- Swiper.js
+	- It is a versatile touch-enabled carousel and slider library for react. With its smooth animations and touch support, swiper.js facilitates the creation of dynamic & interactive slideshows, image galleries, & content sliders, enhancing the UX of your projects.

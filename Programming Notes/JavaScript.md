@@ -1,0 +1,826 @@
+## History of JavaScript
+- In 1995, A netscape (browser) programmer named <u>Brandon Eich</u> developed a <u>scripting language</u> in just 10 days.
+- Original Name: 
+	- First Name: Mocha
+	- Second Name: LiveScript
+	- At that time java was a famous programming language. So, for marketing purpose LiveScript changed into JavaScript.
+
+<mark><b>JAVA AND JAVASCRIPT BOTH ARE DIFFERENT PROGRAMMING LANGUAGE. NOTHING IS COMMON.</b></mark>
+
+- In 1997, there was another famous browser which was <u>Internet Explorer</u>(Microsoft Browser). Then, Microsoft copied JavaScript features and made its own language named as JScript.
+- In browser war (Netscape vs Internet Explorer), EcmaScript was born.
+- <u>Ecma(European Computer Manufacturing Association) International</u> is an industry association founded in 1996, dedicated to the standardisation of information and communication systems.
+
+<mark>JavaScript+Ecma(rules) -> EcmaScript</mark>
+
+Problem Solved -> We can implement same scripting language for different browser.
+First EcmaScript:
+- ES1 -> 1997
+- ES5 -> 2009 (lots of new features)
+- ES6 -> 2015 (Biggest update for JS)
+ES6 is also known as Modern JavaScript
+Ecma have a technical community known as TC39 which has decided that after 2015 they will release JavaScript with new features every year (annual release).
+After 2016, The new versions are named after the year
+- ES2016,ES2017,ES2018,ES2019,ES2020,ES2021,ES2022,ES2023
+
+## JavaScript Features
+- Case Sensitive
+- DynamicallyTyped
+- Cross-Platform
+- Interpreted
+- Object-Oriented Scripting Language
+- Backward Compatible
+
+## JavaScript Variables
+- <u>Variables</u> stores the data which can be changed or used when we need.
+<mark>Keywords are the predefined words in programming languages</mark>
+```JavaScript
+var name = 10;
+let name = 10;
+const pi = 3.14;
+```
+
+## Datatype in JavaScript
+There are two types of datatype
+- Primitive
+- Non-Primitive
+
+### Primitive datatypes are
+- Number
+- Null
+- String
+- Bool
+- Undefined
+- Bigint
+- Symbol
+
+### Non-Primitive datatypes are
+- Array
+- Object
+- RegExp
+
+## JavaScript Hacks
+- Convert string to number
+- Put the + before the string
+```JavaScript
+let str='9';
+console.log(typeof(+str));
+```
+- Convert number into string
+- Add a empty string with the number
+```JavaScript
+let num = 10;
+console.log(typeof(num+""));
+```
+
+## JavaScript String
+- <u>Strings</u> are used to store textual form of data like word, sentence. It follows zero based indexing.
+```JavaScript
+let str = "pro";
+let str = 'pro';
+let str = `pro`;
+```
+### JavaScript String Method
+```JavaScript
+trim()           slice()
+charat()         tostring()
+concat()         substring()
+indexof()        toUpperCase()
+lastIndexof()    toLowerCase()
+```
+
+## Undefined in JavaScript
+- Accessing an uninitialised variable returns undefined.
+```JavaScript
+let str;
+console.log(str); //undefined
+```
+- Accessing a non-existing property of an object returns undefined.
+- Accessing an out-of-bounds array element returns undefined.
+
+## Null in JavaScript
+- Null means <mark>no value</mark> assign to variable.
+- typeof null returns <mark>object</mark>
+- Null is treated as false value.
+
+## JavaScript BigInt
+- <u>BigInt</u> is a primitive datatype which is used for large numeric values. It doesn't represent decimal values.
+- It is used to represent values greater than 2^53-1
+
+## Declaration of BigInt
+- By appending n at the end of numeric values.
+```JavaScript
+var num = 9876543219865252772n;
+```
+- By passing the values as an argument to the BigInt()
+```JavaScript
+var num = BigInt(9876543219865252772);
+```
+
+## Ternary Operator
+- It is also called <u>conditional</u> operator.
+- It takes three operands.
+- It makes the code more concise.
+```JavaScript
+let variableName=Condition?True:False;
+```
+If the condition is true expression after <mark>?</mark> will execute. If it is false, expression after <mark>:</mark> will execute.
+```JavaScript
+let age = 18;
+let warning;
+age >= 18 ? (warning='You can play') : (warning='You cannot play');
+console.log(warning);
+```
+
+## Boolean Datatype
+<u>Boolean</u> can hold only two values, true and false.
+```JavaScript
+var read = true;
+var Eat = False;
+console.log(typeof(read))
+```
+Boolean values also come as a result of comparison.
+```JavaScript
+var a=1,b=4,c=8;
+console.log(b>a); //output: true
+console.log(b>c); //output: false
+```
+
+## <q>==</q>and<q>===</q>
+### Double equals operator:
+- It is known as <mark>Equality or abstract</mark> comparison operator.
+- It compares variables, ignores datatype.
+### Triple equals operator:
+- It is known as the <mark>Identity or Strict</mark> comparison operator.
+- It compares variables as well as datatype.
+
+## Truthy and Falsy Values
+- <u>Truthy values</u> is a value that is considered true when encountered in a boolean context
+```JavaScript
+true,{},[],42,"0","false",new Date(),-42,12n,3.14,-3.14,Infinity,-Infinity
+```
+- <u>Falsy Values</u> is a value that is considered false when encountered in a boolean context.
+```JavaScript
+undefined,null,NaN,false,"",0,-0,0n
+```
+```JavaScript
+var values = 42;
+if(values){
+	console.log(true);
+}
+else{
+	console.log(false);
+}
+```
+
+## Control Flow
+- <u>Control Flow</u> allows our program to make decisions about what code is executed and when
+![[Pasted image 20231116145056.png]]
+Control flow have two types of statements
+- Conditional Statements
+- Looping Statements
+
+### Conditional Statements
+<u>Conditional Statements</u> are basically checks to see if a certain condition is either true or false. if the condition is true then run code "yes", if it is false then run code "no".
+
+Types of Conditional Statements:
+- If statements -> IfElse, IfElseIf
+- Switch
+- Ternary
+
+### Looping Statements
+<u>Looping Statements</u> perform repetitive task with less code
+
+Types of loops:
+- For loop
+- Do/While
+- For...in
+- For...of
+
+### Switch statement
+- It evaluates an expression compare its result with case values and execute the statement associated with the matching case.
+```JavaScript
+switch(expression){
+	case value1:
+		//body of case1
+		break;
+	case value2:
+		//body of case2
+		break;
+	default
+		//body of default
+}
+```
+- <u>Break</u> is optional. It is used to end the switch statement.
+- <u>Default</u> is when there is no matching case, the default body executes. It is optional.
+
+### For loop
+- It executes a block of code as long as a specified condition is true.
+```JavaScript
+for(initialiser;condition;iterator){
+	//statements
+}
+```
+- <u>Initializer</u> is an expression that initialise the loop, it executed once.
+- <u>Condition</u> is a boolean expression that determines whether the for loop should execute or stop.
+- <u>Iterator</u> is executed after each statement.
+```JavaScript
+for(let i=2;i<4;i++){
+	console.log(i);
+}
+```
+
+### While, DoWhile loops
+- <u>While loop</u> executes statements as long as the conditions are true. If the condition become false, the loop is terminated.
+```JavaScript
+while(condition){
+	//statements
+}
+```
+- <u>Do While loop</u>, the block of code is executed once even before checking the condition.
+```JavaScript
+do{
+	//statements
+}
+while(condition)
+```
+
+## JavaScript Functions
+- A <u>function</u> is a block of code that performs a specific task/
+```JavaScript
+function funName(){
+	//statements
+}
+```
+<mark>function is declared using <u>function</u> keyword</mark>
+- Call Function
+```JavaScript
+function myName(){
+	console.log('Tushar Jaryal')
+}
+myName(); //call Function
+```
+
+### Advantage of function
+- Reusability
+- Less code
+- Easy to understand
+
+### Function Parameters
+- When we declare function we specify the parameters.
+```JavaScript
+function example(Parameter){
+	console.log(Parameter);
+}
+```
+### Function Argument
+- When we call function we specify argument.
+```JavaScript
+let argument = 'arg';
+example(argument);
+```
+
+## Intro to Arrays
+<u>Arrays</u> are ordered collection of homogenous items.
+```JavaScript
+//          Element/Item
+let pets = ["cat","dog","cow"];
+// Index ->   0     1     2 
+```
+
+### JavaScript Array Characteristics
+- It can hold values of mixed types.
+- Size of array is dynamic.
+```JavaScript
+let mixed = [1,2.5,"cat"]; //mixed type
+mixed.push("Monkey"); //Dynamic Size
+console.log(mixed);
+```
+
+### Accessing Array Elements
+Arrays are zero-based indexed which means the first element of array starts at index zero.
+```JavaScript
+let pets = ['cat','dog'];
+console.log(pets[0]); //Accessing Element
+```
+
+### Array Methods
+##### Array length
+- It returns the number of elements in an array.
+```JavaScript
+let num = [1,2,3,4];
+console.log(num.length); //4
+```
+##### Array Push()
+- It adds elements to the end of the array.
+```JavaScript
+let num = [1,2,3];
+console.log(num.push(4)); //[1,2,3,4]
+```
+##### Array Pop()
+- It removes the last element from an array and returns removed element.
+```JavaScript
+let num = [1,2,3,4]
+let removednum = num.pop();
+console.log(num); //[1,2,3]
+console.log(removednum); //4
+```
+##### Array Shift
+- It removes the first element and returns removed element
+```JavaScript
+let num = [1,2,3,4];
+let removednum = num.shift();
+console.log(num); //[2,3,4]
+console.log(removednum); //1
+```
+##### Array Unshift()
+- It adds elements to the beginning of an array.
+```JavaScript
+let num = [1,2,3,4]
+console.log(num.unshift(0)); //[0,1,2,3,4]
+```
+##### Array Sort()
+- It sorts the items of an array.
+```JavaScript
+let num = [0,2,4,1];
+console.log(num.sort()); //[0,1,2,4]
+```
+##### Array Reverse()
+- It returns the reverse items of an array.
+```JavaScript
+let num = [1,2,3,4];
+console.log(num.reverse()); //[4,3,2,1]
+```
+
+| Primitive Types                                         | Reference Types                              |
+|:------------------------------------------------------- |:-------------------------------------------- |
+| It has a fixed size in memory                           | Do not have a fixed size in memory           |
+| Data stored on the stack                                | Object stored in the heap                    |
+| Stored directly in the location                         | Stored in variable location                  |
+| Example - null, string, number, bool, undefined, symbol | Example - Arrays, objects, functions, dates  |
+| We cannot add, delete, update in primitive data.        | We can add, delete, update in reference data |
+
+### Spread Operator
+- It is used to expand or spread an iterable or an array. It is denoted by three dots.
+```JavaScript
+let arrStr = ['a','b','c'];
+console.log(arrStr); //['a','b','c']
+console.log(...arrStr); //abc
+```
+##### Clone array using spread operator
+```JavaScript
+let arr1 = [1,2,3]
+let arr2 = [...arr1];
+conosle.log(arr1); //[1,2,3]
+console.log(arr2); //[1,2,3]
+//append an item to the array
+arr1.push(4)
+console.log(arr1); //[1,2,3,4]
+console.log(arr2); //[1,2,3]
+```
+### Array Destructuring
+- It is used to assign array values to distinct variables.
+```JavaScript
+const items = ['Books','Pen','Pencil'];
+const [x,y,z] = items; //destructuring
+console.log(x); //Books
+console.log(y); //Pen
+console.log(z); //Pencil
+```
+##### Destructuring by using spread operator
+```JavaScript
+const [x, ...y] = items;
+console.log(x); //Books
+console.log(y); //['Pen','Pencil']
+const [...y,x]; //error
+```
+
+## Objects Introduction
+##### Objects
+- They are reference type
+- Objects are good to handle real world data
+- Objects stores data in key value pairs.
+- Objects don't have index.
+##### Object Declaration
+```JavaScript
+const person = {
+	name : 'Coder', //key : value
+	age : 20 //key : value
+};
+```
+##### Access data from objects
+```JavaScript
+//Dot Notation
+console.log(person.name); //Coder
+console.log(person.age); //20
+```
+##### Add Key-Value pair to objects
+```JavaScript
+person.id = 5;
+console.log(person); //{name:'Coder',age:20,id:5}
+```
+```JavaScript
+const person = {
+	name : 'Coder';
+	"Person Age" : 20; //Key stored as a string
+};
+//Bracket Notation
+console.log(person['name']); //Coder
+```
+##### Bracket Notation vs Dot Notation
+```JavaScript
+//Dot Notation
+console.log(person.Person Age);
+//error because it does not include spaces between names
+
+//Bracket Notation
+console.log(person['Person Age']);
+//It works because it becomes string now
+```
+### Iterate Object
+##### Using for....in loop
+```JavaScript
+let person = {
+	firstName : "Tushar",
+	lastName : "Jaryal",
+	age : 22
+};
+for(let key in person){
+	console.log(key); // It access only key
+	// firstName
+	// lastName
+	// age
+	console.log(person[key]); // It access only values
+	// Tushar
+	// Jaryal
+	// 22
+	console.log(key,":",person[key]); //It access both key-value
+	// firstName:Tushar
+	// lastName:Jaryal
+	// age:22
+}
+```
+##### Object.keys()
+This method was introduced in ES6. It takes an object and returns an array of the object properties (keys).
+```JavaScript
+console.log(object.keys(person));
+// ["firstName","lastName","age"]
+```
+##### Object.values()
+This method takes an object and returns an array of the object values.
+``` JavaScript
+console.log(object.values(person));
+// ["Tushar","Jaryal","22"]
+```
+##### Object.entries()
+This method takes an object and returns the key-value pair.
+```JavaScript
+console.log(object.entries(person));
+// [['firstName':'Tushar'],['lastName':'Jaryal'],['Age':22]]
+```
+### Object Destructuring
+This assigns properties of an object to individual variables.
+```JavaScript
+let person = {
+	name : "Tushar",
+	age : "Twenty Two"
+};
+let name = person.name;
+let age = person.age;
+let {name,age} = person;
+console.log(name); //Tushar
+console.log(age); //Twenty Two
+```
+##### Setting default values
+```JavaScript
+let {name,age,clas=''} = person;
+console.log(clas); // ''
+```
+
+## Arrow Functions
+- It is another way to write a function.
+- It is introduced in ES6 version
+- It's syntax is shorter than regular function.
+```JavaScript
+let add = function(a,b){
+	return a+b;
+};
+// Using arrow function
+let add = (x,y) =>{
+	return x+y;
+};
+// With single parameter
+(p1) = {
+	// statement
+};
+p1 = {
+	// statement
+};
+// With no parameter
+let a = () =>{
+	return 0;
+};
+```
+
+## Hoisting
+- It is a behaviour in which a function or a variable can be used before declaration.
+```JavaScript
+console.log(name); //undefined
+var name = "xyz";
+// It doesn't cause an error because it looks like this in execution phase
+var name;
+console.log(name);
+var name = "xyz";
+// In case of let
+console.log(name); // reference error
+let name = "xyz";
+// It causes an error because in let variable is hoisted but not initialized.
+// In case of const
+console.log(name); // Error
+const name = "xyz";
+// let and const variables are hoisted but the cannot be accessed before their declaration.
+```
+### Function Hoisting
+- Function can be called before declaring it.
+```JavaScript
+name(); // function called
+function name(){ //Declaration
+	console.log("Tushar Jaryal"); // Tushar Jaryal
+}
+// Function Expression
+//TypeError occurs in case of function expression
+name();
+var name = function(){
+	console.log('Tushar Jaryal');
+}
+//Arrow Function
+name(); //Type Error
+var name = () =>{
+	console.log('Tushar Jaryal')
+}
+// JavaScript doesn't hoist the. function expression and arrow functions.
+```
+
+## Lexical Scope
+- It means that a variable defined outside a function can be accessible inside another function defined after the variable declaration, but the opposite is not true.
+```JavaScript
+function add(){
+	var x = 4; // y is not accessible
+	function mul(){
+		// x is accessible, y is not
+		function minus(){
+			var y = 6; // x is accessible
+		}
+	}
+}
+```
+
+##### Block Scope vs Function Scope
+| Block Scope                                                                                                                  | Function Scope                                                                                                  |
+|:---------------------------------------------------------------------------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------- |
+| It means that the variable is accessible within the block{}                                                                  | It means that the variables are only accessible in the function in which they are declared.                     |
+| Let and  Const are block scope.                                                                                              | var is a function scope.                                                                                        |
+| ```Example : for(let i = 0;i < 10; i++){//Block} console.log(i); //Error we are trying to access let variable outside the scope ```| ```Example : function fun(){var x=42;}fun();console.log(x);//Error we cannot access var outside the function scope ```|
+
+### Default Parameters
+- It allows us to give default values to the function parameters if no value is given
+```JavaScript
+function add(x=1,y=2){
+	return x+y;
+}
+console.log(add(3,4)); //7
+console.log(add(5)); //x=5,y=2 //7
+console.log(add()); //7
+// A parameter default value is undefined
+function add(x){
+	console.log(x);
+}
+add(); //undefined
+```
+
+### Rest Parameters
+- It is used to gather parameters and put them all in an array.
+```JavaScript
+function test(a,b){
+	console.log(a); //8
+	console.log(b); //9
+}
+test(8,9);
+test(8,9,7,6,5);
+// Nothing will happen to 7,6,5
+// To cover 7,6,5 rest parameters concept comes
+function test(a,...b){
+	console.log(a);
+	console.log(b);
+}
+test(8,9,7,6,5);
+//8,[9,7,6,5]
+```
+
+### Parameter Destructuring
+- A couple of specific property values to pass as a parameter to the function definition, not in entire object.
+```JavaScript
+const user = {
+	'name' : 'Tushar',
+	'age' : '21'
+}
+function userdetails({name,age}){
+	console.log(name);
+	console.log(age);
+}
+userdetails(user);
+// Tushar
+// 21
+```
+
+### Callback Function
+- It is defined as, we can also pass a function as an argument to a function.
+```JavaScript
+function second(name){
+	console.log(name);
+}
+function first(callback){
+	callback('Tushar');
+}
+first(second); //Tushar
+```
+
+- The callback function is helpful when you have to wait for a result that takes time.
+
+## Sets in JavaScript
+##### Sets
+- Stores a collection of unique values
+- No index-based access
+- Order is not guaranteed
+- Sets are iterable
+- Sets have its own methods
+```JavaScript
+let items = new Set();
+console.log(typeof(items)); // object
+// Instance of sets is true
+```
+
+##### Arrays vs Sets
+- Array can have duplicate values whereas sets cannot.
+- In Array data is ordered by index whereas sets cannot
+
+##### Useful Set Methods
+```JavaScript
+const items = new Set();
+```
+##### add()
+- Append a new element to the end of the set.
+```JavaScript
+items.add("Hi"); // Set(1) {"Hi"}
+```
+##### clear()
+- Remove all the elements and returns undefined
+```JavaScript
+const items = new Set([1,2,3]);
+```
+##### delete()
+- It deletes a specific element from set.
+```JavaScript
+const items = new Set([1,2,3,4]);
+items.delete(3);
+```
+##### has()
+- Check whether an element exists in sets or not
+```JavaScript
+items.has(2) // true
+```
+
+## Map Data Structure
+- A map is a collection of key-value pairs, similar to an object.
+```JavaScript
+const person = new Map();
+```
+##### Why we need map, if we have object?
+- A map is similar to object, keys in objects are only strings and symbols. But we can use any value as key in map.
+```JavaScript
+const person = new Map();
+person.set('Name','Tushar');
+console.log(person);
+//{'Name'=>'Tushar'}
+```
+### Methods in Maps
+##### get()
+- It returns the value associated with the key.
+##### set()
+- It sets the value of the key and returns the map.
+##### delete()
+- Delete the entry which has the key same as passed key.
+##### clear()
+- Delete all key-value pairs from the map.
+##### has()
+- Returns true if the map has the key provided.
+##### keys()
+- Returns the new iterator that contains the keys insertion order.
+
+### Create own methods
+- Function inside object is known as methods.
+```JavaScript
+const person = {
+	name: 'Tushar',
+	age: 21,
+	about : function(){
+		console.log("My name is ${this.name}");
+	}
+}
+person.about();
+// My name is Tushar
+// When declaring a new object, use the object literal, not the new object() constructor.
+```
+
+## This Keyword
+- 'This' keyword refers to an object that is executing the current piece of code.
+```JavaScript
+function Info(){
+	console.log('My name is ${this.name}');
+}
+const person1 = {
+	name : 'Tushar',
+	about : Info
+}
+const person2 = {
+	name : 'Boy',
+	about : Info
+}
+person1.about(); // My name is Tushar
+person2.about(); // My name is Boy
+```
+
+### Call, Apply, Bind Methods
+##### Call
+- It involves the function and allows you to pass in arguments one by one.
+```JavaScript
+const user1 = {
+	name : 'Tushar',
+	age : 22,
+	intro : function(){
+		console.log(this.name,this.age);
+	}
+}
+const user2 = {
+	name : 'Vishal',
+	age : 21,
+}
+user1.intro.call(user2); // Vishal 21
+```
+##### Apply
+- It invokes the function and allows you to pass in arguments as an array.
+```JavaScript
+var user1 = {
+	name:'Tushar',
+	age:22
+};
+var user2 = {
+	name:'Vishal',
+	age:21
+};
+function say(greet){
+	console.log(greet+this.name);
+}
+say.apply(user2,['Hi ']);
+// Hi Vishal
+```
+##### Bind
+- It returns a new function, allowing you to pass in a this array and any number of arguments.
+```JavaScript
+var user1 = {
+	name : 'Tushar',
+	age : 22
+};
+var user2 = {
+	name : 'Vishal',
+	age : 21
+};
+function say(){
+	console.log(this.name,this.age);
+}
+var myfun = say.bind(user1);
+myfun(); // Tushar 22
+```
+
+## Prototype
+- It is used to add new properties and methods to an existing object constructor.
+```JavaScript
+function Person(){
+	this.name = 'Tushar',
+	this.age = 22
+}
+const person = new Person();
+// Checking the prototype value
+console.log(Person.prototype); //{...}
+// It shows an empty object
+```
+### Prototype Inheritance
+- Objects inherit properties and methods from a prototype.
+- Using the prototype makes faster object creation since properties/methods on the prototype don't have to be re-created each time a new object is created.
+### New Keyword
+<mark>Five things to remember about new keyword</mark>
+- It creates a new object. The type of this object is simply object.
+- It sets this new object's internal.
+- It makes the this variable point to the newly created object.
+- It executes the constructor function, using the newly created object whenever this is mentioned.
+- It returns the newly created object.

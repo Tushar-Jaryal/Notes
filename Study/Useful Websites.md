@@ -1,0 +1,24 @@
+- Uiverse.io
+	- Get beautiful custom elements made with CSS or Tailwind
+- Readme.so
+	- Create Readme for your project easily
+- QuickRef.me
+	- Get free programming Cheatsheets
+- Exercism.io
+	- Learn and practice 60+ programming languages
+- Resumake.io
+	- Create your resume easily
+- DevDocs
+	- It brings together numerous API documentation in a single, searchable interface. You will find docs related to various programming languages, technologies in one place.
+- Ray.so
+	- It allows you to take beautiful screenshots of codes. It also has a dark mode and some preloaded themes for different programming languages.
+- Poet.so
+	- It is useful for developers who wish to post photos of their tweets on social media. Website transforms your tweet into a beautiful and editable design.
+- Roadmap.sh
+	- It provides roadmaps, guidelines, and other educational content to assist developers in choosing a path and directing their learning. It is very helpful for a beginner as well as a learner who needs guidance.
+- Daily.dev
+	- It is a platform where you can find so many good articles to read daily. It shows the best articles from various platforms directly into your browser by using its extension.
+- CSS - Tricks
+	- You can master your web development skills by learning every basics about CSS from this website.
+- OverAPI
+	- It is one of the most beautiful and useful websites. It has cheatsheets for the majority of programming languages.

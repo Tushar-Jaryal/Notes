@@ -1,0 +1,44 @@
+- ls: List Files and directories / List Files
+- cd: Change the current directory / Change Directory
+- pwd: Print the current directory path / Print Working Directory
+- mkdir: Create a new directory / Make Directory
+- touch: Create an empty file
+- rm: Remove files or directories
+- cp: Copy files and directories
+- mv: Move or rename files and directories
+- apt or yum: Package managers for debian-based or red hat-based systems respectively.
+- apt-get install or yum install: Install software packages
+- apt-get update or yum update: Update package lists
+- apt-get upgrade or yum upgrade: Upgrade installed packages.
+- apt-get remove or yum remove: Uninstall packages
+- cat: Display file content
+- more or less: View long files one screen at a time
+- head and tail: Display the beginning or end of file
+- grep: Search for text patterns in files
+- find: Search for files and directories
+- wc: Count lines, words, and characters in a file
+- chmod: Change file permissions
+- chown: Change file ownership
+- ps: List running processes
+- top or htop: Monitor system activity and processes.
+- kill or pkill: Terminate processes
+- ifconfig or ip: Configure network interfaces
+- ping or traceroute: Test network connectivity
+- netstat or ss: Display network statistics
+- ssh or scp: Securely connect and transfer files between machines
+- wget or curl: Download files from the web
+- uname: Display system information
+- df or du: Check disk usage
+- free or vmstat: Monitor system memory.
+- uptime or who: View system uptime and logged-in users
+- dmseg or jouranctl: Check system logs
+- #!/bin/bash: Start a shell script
+- for and while loops: Create repetitive tasks
+- if-then-else statements: Implement conditional logic
+- cron or syetmd timers: Schedule tasks at specific intervals.
+- Ctrl+C and Ctrl+Z: Terminate or pause running processes.
+- Ctrl+D: Log out of a terminal
+- history: Review command history
+- !followed by a number or text: Execute a previously run command
+- alias: Create shortcuts for long or complex commands
+- man or info: Access manual pages for command documentation
