@@ -927,3 +927,198 @@ person
 - Asynchronous programming in JavaScript is facilitated through features like callbacks, Promises, and the modern async/await syntax.
 - JavaScript framework and libraries like React, Angular, and Vue.js have revolutionised web development, enabling the creation of complex and interactive user interfaces.
 - Node.js allows JavaScript to run on the server-side, enabling server-based applications and APIs.
+
+## Number() vs parseInt()
+JavaScript offers two ways to convert data into numbers:
+Number() and paseInt()
+
+### Number()
+- It converts various data types to numbers. It directly converts strings representing valid numbers, handles true as 1, false as 0, and even turns dates into timestamps.
+```JavaScript
+Number('123'); //Output: 123
+Number('hello'); //Output: NaN
+Number('123hello'); //Output: NaN
+Number(true); //Output: 1
+Number(false); //Output: 0
+```
+
+### parseInt()
+- It specifically parses strings into integers. It stops at the first non-numeric character.
+- It also allows setting a radix (base) for conversion.
+```JavaScript
+parseInt('123'); //Output: 123
+parseInt('123hello'); //Output: 123
+parseInt('hello123'); //Output: NaN
+parseInt('10',2); //Output: 2 //Parsing 10 as binary
+```
+
+## Object.groupBy
+```JavaScript
+//Data
+const students = [
+{ id: 1, name: 'Tushar', grade: 'A'},
+{ id: 2, name: 'Vishal', grade: 'B'},
+{ id: 3, name: 'Amit', grade: 'A'},
+{ id: 4, name: 'Ankit', grade: 'C'},
+{ id: 5, name: 'Aadarsh', grade: 'B'},
+];
+//Group students by grade using Object.groupBy with a callback function
+const groupedStudents = Object.groupBy(students, ({grade}) => grade);
+
+console.log(groupedStudents);
+//Output:
+{
+	'A': [
+	{ id: 1, name: 'Tushar', grade: 'A'},
+	{ id: 3, name: 'Amit', grade: 'A'}
+	],
+	'B': [
+	{ id: 2, name: 'Vishal', grade: 'B'},
+	{ id: 5, name: 'Aadarsh', grade: 'B'}
+	],
+	'C': [
+	{ id: 4, name: 'Ankit', grade: 'C'}
+	]
+}
+```
+
+## Map and Filter
+Both are array methods and both return a new array when applying. Filter additionally eliminates items that don't match.
+```JavaScript
+const DATA = [
+	{id: 1, title: 'first'},
+	{id: 2, title: 'second'},
+	{id: 3, title: 'third'},
+	{id: 4, title: 'fourth'}
+]
+
+const upperData = DATA.map(el=>el.title.toUpperCase())
+console.table(upperData)
+//(index)    Value
+//0          'FIRST'
+//1          'SECOND'
+//2          'THIRD'
+//3          'FOURTH'
+const moduloData = DATA.filter(el=>el.id % 2 === 0)
+console.table(moduloData)
+//(index)    id    title
+//0          2     'second'
+//1          4     'fourth'
+console.table(DATA)
+//(index)    id    title
+//0          1     'first'
+//1          2     'second'
+//2          3     'third'
+//3          4     'fourth'
+```
+
+## Slice and Splice
+```JavaScript
+const charactersArr = [
+	'Tony Stark',
+	'Harry Potter',
+	'Witcher',
+	'Luke Skywalker',
+]
+
+const copyArr = [...charactersArr]
+
+copyArr.splice(0,1);
+console.log(copyArr)
+//['Harry Potter','Witcher','Luke Skywalker']
+copyArr.splice(CopyArr.length,1,'Wonder Woman');
+console.log(copyArr)
+//['Harry Potter','Witcher','Luke Skywalker','Wonder Woman']
+const selected = charactersArr.slice(0,2)
+console.log(selected)
+//['Tony Stark','Harry Potter']
+console.log(charactersArr)
+//['Tony Stark','Harry Potter','Witcher','Luke Skywalker']
+```
+
+## Concat
+This method returns a new array of merging two or more arrays.
+```JavaScript
+const arr1 = [1,2,3,4]
+const arr2 = [10,20,30,40]
+const arr3 = [100,200,300,400]
+
+const mergedArr = arr1.concat(arr2,arr3)
+console.log(mergedArr)
+//[1,2,3,4,10,20,30,40,100,200,300,400]
+```
+
+## Find and findIndex
+The find method returns the first element that satisfies the condition, while findIndex returns the index of that element
+```JavaScript
+const DATA = [
+	{id: 1,title: 'first'},
+	{id: 2,title: 'second'},
+	{id: 3,title: 'third'},
+	{id: 4,title: 'fourth'},
+]
+
+const itemIdx = DATA.findIndex(el=> el.id === 2)
+console.log(itemIdx)
+//1
+const item = DATA.find(el=>el.id === 2)
+console.log(item)
+//{id: 2, title: 'second'}
+```
+
+## Destructuring
+The destructuring assignment is a special syntax which enables unpacking(assigning) values from arrays or object properties directly into variables.
+```JavaScript
+const name = ['Luke','Skywalker']
+const [firstName, lastName] = name
+console.log(firstName, lastName)
+//Luke Skywalker
+const jedi = {
+	id: 1,
+	name: 'Luke Skywalker',
+	lightsaber: true,
+	species: 'Human'
+}
+const {name:jediName, species, ...rest} = jedi
+console.log(jediName)
+console.group(species)
+//Luke Skywalker
+//Human
+console.log(rest)
+//{id: 1, lightsaber: true}
+```
+
+## rest and spread operator
+Rest parameter enables us to pass unspecified number of parameters to a function which will be placed into array, while the spread operator enables us to spread the content of a iterable into individual elements
+```JavaScript
+const introduction = ['my','name','is','Tushar','Jaryal']
+const copyArr = [...introduction]
+console.log(copyArr)
+//['my','name','is','Tushar','Jaryal']
+console.log(...copyArr)
+//my name is Tushar Jaryal
+//REST
+const getSize = (...args) => {
+	return args.length
+}
+console.log(getSize(1,5,10))
+//3
+console.log(getSize(10,20,40,50,60))
+//5
+```
+
+## Promises
+Promises are used to handle asynchronous operations. Each promise can ens as a success or failure having 3 possible statuses: pending, fulfilled or rejected.
+```JavaScript
+const fetchData = async() => {
+	try {
+		const response = await fetch('https:site.com');
+		if(!response.ok) throw new Error(repsonse.status);
+		const result = await response.json();
+		return result;
+	}
+	catch(e){
+	console.log(e)
+	}
+}
+```
