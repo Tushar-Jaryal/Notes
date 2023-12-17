@@ -240,3 +240,62 @@ function App() {
 	return <div>React Query Library</div>
 }
 ```
+
+## Dynamic Imports 
+- Dynamic imports is a JavaScript feature.
+- It allows you to load components or modules only when they are needed, rather than loading everything up front.
+- In React, this technique is crucial for optimising application performance, especially in large applications.
+- This concept is part of a broader strategy known as code splitting, which helps in reducing the initial load time and improving the user experience.
+
+### Basics
+- Dynamic import is a method for loading JavaScript modules asynchronously.
+- Unlike static imports, dynamic imports load modules on-demand, which can significantly reduce the initial load time of your application.
+```JavaScript
+import('./MyComponent').then(MyComponent =>{
+	//Use Component Here
+});
+```
+
+- This approach returns a promise, making it ideal for scenarios where module availability is conditional or needs to align with user interactions.
+
+### React.lazy
+- React.lazy is a function that simplifies the integration of dynamic imports in React.
+- It allows components to be loaded dynamically and renders them like regular components.
+```JavaScript
+const MyComponent = React.lazy(() => import('./MyComponent'));
+```
+
+- React.lazy accepts a function that must call a dynamic 'import()'.
+- The function will return a promise, which resolves to the module containing the default export of the React component.
+
+### Handling the Loading State
+- React's Suspense component is used to specify a fallback content (like a loading indicator).
+- This is used to prevent another JSX while the component, which is dynamically imported, is being loaded.
+```JavaScript
+<Suspense fallback={<div>Loading..</div>}>
+	<MyComponent />
+</Suspense>
+```
+
+- The 'fallback' prop holds the JSX content to be displayed while the component, in this case MyComponent, is loading.
+
+### Use Cases
+- Dynamic imports can be used in a great range of situations.
+- They are perfect for large applications where not all scripts are needed at once.
+- It can be very beneficial for features that are accessed conditionally, like modal dialogs, tabs, and certain forms.
+- Examples:
+	- Dashboard Widgets: Load widgets or panels dynamically in a dashboard app.
+	- E-commerce: Dynamically load reviews, related products, and customisation options on product pages.
+	- Conditional Admin Interfaces: Load admin sections dynamically for users with necessary permissions.
+
+### Best Practices
+- Use dynamic import thoughtfully to balance performance gains with code complexity.
+- While code splitting helps in reducing initial load times, too much splitting can lead to excessive network requests, which might harm performance.
+- Consider preloading components that the user is likely to interact with next.
+- Provide informative loading indicators or placeholders to maintain a good user experience during component load.
+- Regularly monitor the size of your code bundles to understand the impact of dynamic imports.
+
+### Conclusion
+- Dynamic imports in React represents a significant step forward in optimising web application performance.
+- By allowing developers to load components and modules only when needed, it dramatically reduces the initial load time of applications, making them faster and more responsive.
+- This technique aligns perfectly with modern web development practices where performance, efficiency, and user engagement are of significant importance.
