@@ -1122,3 +1122,48 @@ const fetchData = async() => {
 	}
 }
 ```
+
+## Difference Between synchronous and asynchronous code
+1. Execution
+	1. Synchronous
+		- Executes Sequentially
+	2. Asynchronous
+		- Executes out of order, not waiting for one operation to complete before starting the next.
+2. Behaviour
+	1. Synchronous
+		- Can lead to a blocking behaviour in applications, potentially making the UI unresponsive if a task takes a long time.
+	2. Asynchronous
+		- Non-Blocking behaviour, allowing other tasks to run simultaneously.
+3. Example
+	1. Synchronous
+```JavaScript
+const result = someFunction();
+console.log(result);
+console.log('After Function');
+```
+
+		2. Asynchronous
+```JavaScript
+fetch('https://api.example.com/data')
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(error));
+console.log('After Fetch Call');
+```
+
+4. Understanding and Debugging
+	1. Synchronous
+		- Generally easier to understand and debug due to its straightforward flow.
+	2. Asynchronous
+		- Can be more complex due to the use of callbacks, promises, or async/await.
+5. Suitability for Unpredictable Task
+	1. Synchronous
+		- Not well-suited for tasks that can take an unpredictable amount of time, such as network requests or reading from disk.
+	2. Asynchronous
+		- Ideal for tasks like network requests, timers and other operations that shouldn't block the main thread.
+6. Common Methods/Functions
+	1. Synchronous
+		- Array.forEach(),Math.max(),etc.
+	2. Asynchronous
+		- setTimeout(), fetch(), XMLHttpRequest, Promises, async/await.
+
