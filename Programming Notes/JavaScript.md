@@ -325,7 +325,7 @@ let removednum = num.pop();
 console.log(num); //[1,2,3]
 console.log(removednum); //4
 ```
-##### Array Shift
+##### Array Shift()
 - It removes the first element and returns removed element
 ```JavaScript
 let num = [1,2,3,4];
@@ -351,6 +351,27 @@ console.log(num.sort()); //[0,1,2,4]
 let num = [1,2,3,4];
 console.log(num.reverse()); //[4,3,2,1]
 ```
+
+##### Array Concat()
+- Returns a new array that combines two or more arrays.
+
+##### Array Slice()
+- Extracts a portion of an array into a new array without modifying the original array.
+
+##### Array Splice()
+- Adds or removes elements from an array, changing the original array.
+
+##### Array IndexOf()
+- Returns the first index at which given element can be found in the array or -1 if it is not present.
+
+##### Array LastIndexOf()
+- Returns the last index at which a given element can be found in the array or -1 if it is not present.
+
+##### Array Includes()
+- Determines whether an array includes a certain element, returning true or false.
+
+##### Array Join()
+- Joins all elements of an array into a string.
 
 | Primitive Types                                         | Reference Types                              |
 |:------------------------------------------------------- |:-------------------------------------------- |
