@@ -150,3 +150,67 @@ host2 | SUCCESS => {
 	"uid": 0
 }
 ```
+
+### Explanation
+- "copy" - Copy module defined.
+- "src=...." Module arguments, in this case, are source absolute path and destination absolute path.
+- "host1 | SUCCESS => {.....}" - Ansible command output reflecting the success of the copy command and other details like the sha1 and md5 checksums for file integrity check and metadata like owner, size, or permissions.
+
+It is effortless to have a package installed on a bunch of servers. Ansible has several modules that interact with used installers, like yum, apt, dnf, etc.
+
+Now we will learn how to install a package via the yum module on two Centos hosts.
+```bash
+ansible -i hosts all -m yum -a 'name=ncdu state=present'
+```
+```bash
+host1 | SUCCESS => {
+	"changed": true,
+	"msg": "",
+	"rc": 0,
+	"results": [.......]
+}
+host2 | SUCCESS => {
+	"changed": true,
+	"msg": "",
+	"rc": 0,
+	"results": [...........]
+}
+```
+### Explanation
+- "yum" - Yum module
+- 'name=ncdu state=present' - It defines the module arguments, and in this case, you will choose the name of the package and its state. if the state is absent, the package will be searched and if found, removed.
+- "host1 | SUCCESS = > {...}" - When colored in yellow, you will see the output of the ansible command with thw state changed, meaning in this case, that the package was found and installed.
+- "results : ......."Status of the yum install command issued via ansible. In this case the package ncdu.x86_64 was installed.
+
+Of course, all of the yum installer options can be used via ansible, including update, install, latest version, or remove.
+
+Now we will learn how to remove the previously installed package.
+```bash
+ansible -i hosts all -m yum -a 'name=ncdu state=absent'
+```
+
+## Ansible Playbooks
+
+Ansible playbooks are the way of sending commands to remote systems through scripts. Ansible playbooks are used to configure complex system environments to increase flexibility by executing a script to one or more systems. Ansible playbooks. tend to be more of a configuration language than a programming language.
+
+Ansible Playbooks commands use YAML format, so there is not much syntax needed, but indentation must be respected. Like the name is saying, a playbook is a collection of plays. Through a playbook, you can designate specific role to some hosts and other roles to other hosts. By doing so, you can orchestrate multiple servers in very diverse scenarios, all in one playbook.
+
+To have all the details precise before continuing with Ansible playbook examples, we must first define a task. These are the interface to ansible modules for roles and playbooks.
+
+Now, let's learn Ansible playbook through an example with one playbook with one play, containing multiple tasks as below:
+
+```bash
+---
+
+- hosts: group1
+  tasks:
+  - name: Install lldpad package
+    yum:
+      name: lldpad
+      state: latest
+  - name: check lldpad service status
+    service:
+       name: lldpad
+       state: started
+```
+
